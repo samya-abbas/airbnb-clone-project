@@ -192,3 +192,17 @@ Why it matters: Keeps the system secure against common web vulnerabilities and p
 What it is: Properly handles session tokens and logout mechanisms.
 Implementation: Use secure cookies, short-lived tokens, and refresh token rotation.
 Why it matters: Helps prevent session hijacking and ensures that users remain in control of their accounts.
+
+#CI/CD pipelines
+CI/CD (Continuous Integration and Continuous Deployment) refers to the automated processes of building, testing, and deploying code whenever changes are made. CI ensures that every change is tested early, while CD ensures the latest version is delivered to users quickly and reliably.
+
+This is essential for your project because it:
+Reduces errors by running automated tests before merging code.
+Speeds up development by automating deployments.
+Ensures consistency across environments (dev, staging, production).
+
+Common Tools Used
+GitHub Actions – Automates testing and deployment workflows directly from your GitHub repository.
+Docker – Ensures your app runs the same everywhere by containerizing it.
+Heroku / AWS / Render / DigitalOcean – Platforms to deploy your Dockerized app.
+pytest / Django test runner – To automatically test backend logic before deployment.
