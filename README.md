@@ -153,3 +153,42 @@ Reviews not only build trust among new users but also help maintain quality stan
 Indexing is applied to fields like user ID, property location, and booking dates for faster lookup performance.
 Caching is used to store frequently accessed data such as popular listings or user sessions, reducing response times and database load.
 
+#API Security
+1. Authentication
+What it is: Ensures that only registered users can access protected parts of the system (e.g., bookings, payments).
+Implementation: Use JWT (JSON Web Tokens) or Django's built-in authentication to verify user identity during each request.
+Why it matters: Prevents unauthorized access and protects personal user accounts from being hijacked.
+
+2. Authorization
+What it is: Controls what authenticated users can do (e.g., only the owner can edit a property listing).
+Implementation: Use Django permissions and custom access controls at the view and model levels.
+Why it matters: Prevents users from accessing or modifying data they don’t own, which is vital for user trust and data integrity.
+
+3. Rate Limiting
+What it is: Limits how many times a user or IP can hit the API in a given time frame.
+Implementation: Use Django REST Framework’s throttling or external tools like django-ratelimit.
+Why it matters: Protects the API from abuse, spam, and denial-of-service (DoS) attacks, especially on endpoints like login or search.
+
+4. Data Encryption (at rest & in transit)
+What it is: Protects sensitive data like passwords and payment info using encryption.
+Implementation:
+
+In transit: Enforce HTTPS for all requests.
+
+At rest: Hash passwords with PBKDF2 (Django default) and encrypt sensitive fields if needed.
+Why it matters: Safeguards personal and financial information from interception or database leaks.
+
+5. Secure Payment Integration
+What it is: Ensures all transactions are safely processed.
+Implementation: Use tokenized payment processing (e.g., through Stripe or a custom encrypted gateway).
+Why it matters: Prevents credit card fraud and builds user trust in the platform.
+
+6. Input Validation and Sanitization
+What it is: Prevents malicious inputs such as SQL injection, XSS, or CSRF attacks.
+Implementation: Use Django’s built-in form validation, CSRF middleware, and safe templating.
+Why it matters: Keeps the system secure against common web vulnerabilities and preserves data consistency.
+
+7. Session Management & Logout
+What it is: Properly handles session tokens and logout mechanisms.
+Implementation: Use secure cookies, short-lived tokens, and refresh token rotation.
+Why it matters: Helps prevent session hijacking and ensures that users remain in control of their accounts.
