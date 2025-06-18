@@ -30,3 +30,15 @@ This team member manages the deployment pipeline, cloud infrastructure, and cont
 
 Quality Assurance (QA) Engineer
 The QA Engineer is tasked with validating the functionality and stability of the backend services. They write and execute test cases (unit, integration, and performance tests), track bugs, verify business logic correctness, and help maintain the overall quality of the system through rigorous testing practices.
+
+#Technology Stack Overview:
+Django – Core web framework powering the backend and API logic.
+Django REST Framework – Simplifies building and managing RESTful APIs.
+PostgreSQL – Robust relational database for storing structured data.
+GraphQL – Enables efficient and flexible data queries.
+Celery – Manages background tasks like notifications and payment handling.
+Redis – Supports caching and session management for performance.
+Docker – Ensures consistent development and deployment through containerization.
+CI/CD Pipelines – Automates testing and deployment of code updates.
+
+
